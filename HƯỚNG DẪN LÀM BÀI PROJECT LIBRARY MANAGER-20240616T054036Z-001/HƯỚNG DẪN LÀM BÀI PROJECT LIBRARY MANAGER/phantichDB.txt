@@ -1,0 +1,22 @@
+Liệt kê thực thể , thuộc tính của thực thể trong cơ sở dữ liệu:
+
+Cơ sở dữ liệu quản lí thư viện :
+Book (bookID, title, authorID,categoryID,publishedYear,quantity)
+Authors (authorID, name ,biography )
+Categories(categoryID, CategoryName)
+Member(memberID, FullName , email, phone, address)
+Staff (StaffID,FullName ,email, phone ,address,salary)
+BorrowRecords(borrowID,bookID,memberID,staffID,BorrowDate,AllowedDays)
+ReturnRecord(returnID,returnDate)
+
+
+Các mối quan hệ trong cơ sở dữ liệu :
+
+Book - Author : N - N => Book_AuthorDetail(bookID,authorID,history)
+Book - Categories: N - N =>  Book_CategoriesDetail(bookID,categoryID,Note)
+BorrowRecords - Staff: N - 1
+BorrowRecords - Member: N - 1
+BorrowRecords - book: N - 1
+ReturnRecord - Staff: N - 1
+BorrowRecords - ReturnRecord : 1 - 1 => Borrow_ReturnDetail(borrowID,returnID,FineAmount,Note)
+
